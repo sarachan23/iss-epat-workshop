@@ -19,17 +19,30 @@ namespace ToDoListApp
 
         public void AddTask()
         {
-            List<Task> tasklist = new List<Task>();
+            TaskList tasklist = new TaskList();
             Task task = new Task("test");
 
-            tasklist.Add(task);
+            tasklist.addTask(task);
 
-            Assert.AreEqual(tasklist[0].getTaskName(), "test");
+            CollectionAssert.Contains(tasklist.getTaskList(), task);
 
             //Asserttasklist[0].getName() == "test";
 
         }
 
+        [TestMethod]
+        public void RemoveTask()
+        {
+            TaskList tasklist = new TaskList();
+            Task task = new Task("test");
+            Task task2 = new Task("test2");
 
+            tasklist.addTask(task);
+            tasklist.addTask(task2);
+
+            tasklist.removeTask("test");
+            CollectionAssert.DoesNotContain(tasklist.getTaskList(), task);
+
+        }
     }
 }

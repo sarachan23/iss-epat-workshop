@@ -9,7 +9,7 @@ namespace ToDoListAppUnitTest
         [TestInitialize()]
         public void Initialize()
         {
-            _list = new ToDoList();
+
         }
 
         [TestCleanup()]

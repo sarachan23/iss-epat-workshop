@@ -18,5 +18,11 @@ namespace ToDoListApp
         {
             return name;
         }
+
+        public string setTaskName(string newName)
+        {
+            this.name = newName;
+            return this.name;
+        }
     }
 }

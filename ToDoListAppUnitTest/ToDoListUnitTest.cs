@@ -44,5 +44,35 @@ namespace ToDoListApp
             CollectionAssert.DoesNotContain(tasklist.getTaskList(), task);
 
         }
+
+        [TestMethod]
+        public void UpdateTask()
+        {
+            TaskList tasklist = new TaskList();
+            Task task = new Task("test");
+            Task task2 = new Task("test2");
+
+            tasklist.addTask(task);
+            tasklist.addTask(task2);
+
+            tasklist.updateTask("test", "test3");
+            Assert.AreNotEqual(task.getTaskName(), "test");
+
+        }
+
+        [TestMethod]
+        public void ViewTask()
+        {
+            TaskList tasklist = new TaskList();
+            Task task = new Task("test");
+            Task task2 = new Task("test2");
+
+            tasklist.addTask(task);
+            tasklist.addTask(task2);
+
+            tasklist.updateTask("test", "test3");
+            Assert.AreNotEqual(task.getTaskName(), "test");
+
+        }
     }
 }

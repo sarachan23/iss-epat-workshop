@@ -32,6 +32,18 @@ namespace ToDoListApp
             }
         }
 
+        public void updateTask(string oldName, string newName)
+        {
+            foreach (Task task in tasklist)
+            {
+                if (task.getTaskName().Contains(oldName))
+                {
+                    task.setTaskName(newName);
+                    break;
+                }
+            }
+        }
+
         public List<Task> getTaskList()
         {
             return tasklist;

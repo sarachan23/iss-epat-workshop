@@ -18,6 +18,12 @@ namespace ToDoListApp
             this.name = name;
         }
 
+        public Task(string name, DateTime deadline)
+        {
+            this.name = name;
+            this.deadline = deadline;
+        }
+
         public string getTaskName()
         {
             return name;
@@ -32,6 +38,11 @@ namespace ToDoListApp
         public void markDone()
         {
             this.isDone = true;
+        }
+
+        public DateTime getDeadline()
+        {
+            return deadline;
         }
 
         public bool getIsDone()

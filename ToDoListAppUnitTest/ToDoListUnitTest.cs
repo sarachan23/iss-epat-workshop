@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
-namespace ToDoListAppUnitTest
+namespace ToDoListApp
 {
     [TestClass]
     public class ToDoListUnitTest
@@ -9,7 +10,7 @@ namespace ToDoListAppUnitTest
         [TestInitialize()]
         public void Initialize()
         {
-
+            _list = new ToDoList();
         }
 
         [TestCleanup()]
@@ -18,6 +19,21 @@ namespace ToDoListAppUnitTest
         [TestMethod]
         public void AddNewToDoItemTest()
         {
+        }
+
+        [TestMethod]
+
+        public void AddTask()
+        {
+            List<Task> tasklist = new List<Task>();
+            Task task = new Task("test");
+
+            tasklist.Add(task);
+
+            Assert.AreEqual(tasklist[0].getTaskName(), "test");
+
+            //Asserttasklist[0].getName() == "test";
+
         }
 
 

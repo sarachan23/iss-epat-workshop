@@ -71,8 +71,10 @@ namespace ToDoListApp
             tasklist.addTask(task2);
 
             tasklist.updateTask("test", "test3");
-            Assert.AreNotEqual(task.getTaskName(), "test");
 
+            string testString = ("test3" + "\n" + "test2");
+
+            Assert.AreEqual(tasklist.viewTasks(), testString);
         }
     }
 }

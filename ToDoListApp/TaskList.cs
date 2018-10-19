@@ -44,6 +44,17 @@ namespace ToDoListApp
             }
         }
 
+        public string viewTasks()
+        {
+            string res = "";
+            foreach(Task t in tasklist)
+            {
+                res += t.getTaskName() + "\n";
+            }
+
+            return res.Trim();
+        }
+
         public List<Task> getTaskList()
         {
             return tasklist;

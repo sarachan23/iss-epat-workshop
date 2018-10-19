@@ -15,7 +15,10 @@ namespace ToDoListApp
 
         public Task(string name)
         {
+            this.deadline = DateTime.Now;
+            this.deadline.AddDays(1);
             this.name = name;
+            this.priority = 1;
         }
 
         public Task(string name, DateTime deadline)
@@ -33,6 +36,11 @@ namespace ToDoListApp
         {
             this.name = newName;
             return this.name;
+        }
+
+        public void setPriority(int priority)
+        {
+            this.priority = priority;
         }
 
         public void markDone()

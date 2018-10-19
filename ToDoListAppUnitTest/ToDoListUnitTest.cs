@@ -108,5 +108,20 @@ namespace ToDoListApp
 
             Assert.AreEqual(datetime.ToShortDateString(), tasklist.getTask("test").getDeadline().ToShortDateString());
         }
+
+        [TestMethod]
+        public void Priority()
+        {
+            TaskList tasklist = new TaskList();
+            DateTime datetime = DateTime.Now;
+
+            Task task = new Task("test", datetime);
+            Task task2 = new Task("test2");
+
+            tasklist.addTask(task);
+            tasklist.addTask(task2);
+
+            Assert.AreEqual(datetime.ToShortDateString(), tasklist.getTask("test").getDeadline().ToShortDateString());
+        }
     }
 }

@@ -74,6 +74,19 @@ namespace ToDoListApp
                         _taskList.removeTask(userInput);
                     }
                     break;
+                case 4:
+                    Console.WriteLine("Selected: 4");
+
+                    Console.Write("Mark task as done: ");
+                    userInput = Console.ReadLine();
+
+                    if (!string.IsNullOrWhiteSpace(userInput))
+                    {
+                        Task task =_taskList.getTask(userInput);
+
+                        task.markDone();
+                    }
+                    break;
                 case 9:
                     break;
                 default:

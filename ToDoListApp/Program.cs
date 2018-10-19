@@ -62,7 +62,6 @@ namespace ToDoListApp
                         _taskList.addTask(t);
                     }
 
-
                     break;
                 case 3:
                     Console.WriteLine("Selected: 3");
@@ -87,6 +86,7 @@ namespace ToDoListApp
 
         public static void ShowCurrentList()
         {
+            Console.WriteLine("=== List of tasks ===");
             //List<Task> list = _taskList.getTaskList();
 
             //foreach (Task s in list)

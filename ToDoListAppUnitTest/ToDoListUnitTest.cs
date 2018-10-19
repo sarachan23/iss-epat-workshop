@@ -10,16 +10,10 @@ namespace ToDoListApp
         [TestInitialize()]
         public void Initialize()
         {
-            _list = new ToDoList();
         }
 
         [TestCleanup()]
         public void Cleanup() { }
-
-        [TestMethod]
-        public void AddNewToDoItemTest()
-        {
-        }
 
         [TestMethod]
 

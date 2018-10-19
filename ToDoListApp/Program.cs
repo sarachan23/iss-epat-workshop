@@ -8,8 +8,12 @@ namespace ToDoListApp
 {
     class Program
     {
+        private static TaskList _taskList = null;
+
         static void Main(string[] args)
         {
+            _taskList = new TaskList();
+
             bool exit = false;
             do
             {
@@ -39,25 +43,39 @@ namespace ToDoListApp
             bool canParse = Int32.TryParse(Console.ReadLine(), out input);
 
             if (!canParse) input = 99; //if not a number, assign a default number which is invalid
-
+            string userInput = null;
             switch (input)
             {
                 case 1:
-                    Console.WriteLine("1");
+                    Console.WriteLine("Selected: 1");
+                    ShowCurrentList();
                     break;
-
                 case 2:
-                    Console.WriteLine("2");
-                    break;
+                    Console.WriteLine("Selected: 2");
 
+                    Console.Write("Add task: ");
+                    userInput = Console.ReadLine();
+
+                    if (!string.IsNullOrWhiteSpace(userInput))
+                    {
+                        Task t = new Task(userInput);
+                        _taskList.addTask(t);
+                    }
+
+                    break;
                 case 3:
-                    Console.WriteLine("3");
-                    break;
+                    Console.WriteLine("Selected: 3");
 
+                    Console.Write("Remove task: ");
+                    userInput = Console.ReadLine();
+
+                    if (!string.IsNullOrWhiteSpace(userInput))
+                    {
+                        _taskList.removeTask(userInput);
+                    }
+                    break;
                 case 9:
-
                     break;
-
                 default:
                     Console.WriteLine("Invalid choice");
                     break;
@@ -68,16 +86,14 @@ namespace ToDoListApp
 
         public static void ShowCurrentList()
         {
-            List<String> list = new List<String>();
-            list.Add("Fix bug no 1");
-            list.Add("Fix bug no 2");
-            list.Add("Fix bug no 3");
+            Console.WriteLine("=== List of tasks ===");
+            //List<Task> list = _taskList.getTaskList();
 
-            foreach (String s in list)
-            {
-                Console.WriteLine(s);
-            }
-
+            //foreach (Task s in list)
+            //{
+            //    Console.WriteLine(s.getTaskName());
+            //}
+            Console.WriteLine(_taskList.viewTasks());
         }
     }
 }

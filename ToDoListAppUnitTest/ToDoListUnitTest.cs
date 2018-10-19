@@ -76,5 +76,22 @@ namespace ToDoListApp
 
             Assert.AreEqual(tasklist.viewTasks(), testString);
         }
+
+        [TestMethod]
+        public void MarkTaskAsDone()
+        {
+            TaskList tasklist = new TaskList();
+            Task task = new Task("test");
+            Task task2 = new Task("test2");
+
+            tasklist.addTask(task);
+            tasklist.addTask(task2);
+
+            tasklist.updateTask("test", "test3");
+
+            tasklist.markDone("test3");
+
+            Assert.AreEqual(tasklist.getTask("test3").getIsDone(), true);
+        }
     }
 }

@@ -55,6 +55,25 @@ namespace ToDoListApp
             return res.Trim();
         }
 
+        public void markDone(string name)
+        {
+            Task t = getTask(name);
+            t.markDone();
+        }
+
+        public Task getTask(string name)
+        {
+            foreach (Task task in tasklist)
+            {
+                if (task.getTaskName().Contains(name))
+                {
+                    return task;
+                }
+            }
+            Console.WriteLine("No such task found");
+            return null;
+        }
+
         public List<Task> getTaskList()
         {
             return tasklist;

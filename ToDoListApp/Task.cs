@@ -9,6 +9,10 @@ namespace ToDoListApp
     public class Task
     {
         private string name;
+        DateTime deadline;
+        private int priority;
+        private bool isDone = false;
+
         public Task(string name)
         {
             this.name = name;
@@ -23,6 +27,16 @@ namespace ToDoListApp
         {
             this.name = newName;
             return this.name;
+        }
+
+        public void markDone()
+        {
+            this.isDone = true;
+        }
+
+        public bool getIsDone()
+        {
+            return isDone;
         }
     }
 }

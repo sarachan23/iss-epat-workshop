@@ -17,6 +17,7 @@ namespace ToDoListApp
                 int input = ReadInput();
                 if (input == 9) exit = true;
             } while (!exit);
+
         }
 
         public static void ShowMenu()

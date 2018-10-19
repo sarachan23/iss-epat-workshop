@@ -55,7 +55,7 @@ namespace ToDoListApp
 
                     Console.Write("Add task: ");
                     userInput = Console.ReadLine();
-
+                    
                     if (!string.IsNullOrWhiteSpace(userInput))
                     {
                         Task t = new Task(userInput);
